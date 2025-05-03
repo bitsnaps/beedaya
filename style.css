@@ -1,0 +1,740 @@
+/* --- Variables --- */
+:root {
+    --deep-charcoal: #1D1D1B; /* Primary Black Variant */
+    --success-gold: #FFC107; /* Primary Yellow */
+    --pollen-yellow: #FFEB3B; /* Bright Accent */
+    --muted-honey: #E8B41A; /* Softer Yellow/Gold */
+    --beeswax-cream: #FFFACD; /* Light Yellow/Neutral */
+    --clean-white: #FFFFFF;
+    --mid-grey: #888888;
+    --light-grey: #F0F0F0;
+    --text-dark: #333333; /* Slightly lighter than charcoal for body text */
+}
+
+/* --- Global Styles & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* Improved text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    /* Prevents issues with 100vh on mobile browsers */
+    height: -webkit-fill-available;
+}
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--clean-white);
+    /* For 100vh compatibility on mobile */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--deep-charcoal);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; } /* Slightly reduced for better balance */
+h2 { font-size: 2rem; text-align: center; margin-bottom: 2.5rem; }
+h3 { font-size: 1.3rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--muted-honey);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus { /* Added focus state */
+    color: var(--success-gold);
+    outline: 2px solid transparent; /* Basic focus outline */
+    outline-offset: 2px;
+}
+/* Add more visible focus state for keyboard nav */
+a:focus-visible {
+    outline: 2px solid var(--success-gold);
+    border-radius: 2px;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.icon { /* Style for loaded SVG icons */
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem auto; /* Center icons horizontally */
+    fill: var(--success-gold); /* Try fill first */
+    stroke: var(--success-gold); /* Also stroke for outline icons */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px; /* Consistent padding */
+}
+
+.section {
+    /* Reduced padding slightly */
+    /* padding: 50px 20px; */
+    padding: 5vh 2vh;
+}
+
+.section-highlight {
+    background-color: var(--light-grey);
+}
+.section-dark {
+     background-color: var(--deep-charcoal);
+     color: var(--clean-white);
+     text-align: center;
+}
+.section-dark h2 {
+    color: var(--clean-white);
+}
+.section-dark p {
+    color: var(--light-grey);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-dark .cta-button-light {
+     background-color: var(--clean-white);
+     color: var(--deep-charcoal);
+     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.section-dark .cta-button-light:hover,
+.section-dark .cta-button-light:focus {
+     background-color: var(--success-gold);
+     color: var(--deep-charcoal);
+ }
+
+.section-intro {
+    text-align: center;
+    max-width: 650px; /* Slightly increased max-width */
+    margin: 0 auto 3rem auto;
+    color: var(--mid-grey);
+    font-size: 1.05rem; /* Slightly larger intro text */
+}
+
+/* --- Header --- */
+#header {
+    position: absolute; /* Or fixed, depending on desired scroll behavior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header is above other content */
+    background-color: transparent; /* Or a solid color if preferred */
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem; /* Adjust as needed */
+    font-weight: 700;
+    /* Assuming white text on hero */
+    /* color: var(--white); */
+    color: var(--muted-honey);
+    text-decoration: none;
+    display: flex; /* Add this */
+    align-items: center; /* Add this */
+    gap: 0.5rem; /* Add this for spacing */
+}
+
+
+.logo img {
+    /* vertical-align: middle; */ /* Remove or comment out if flex is used */
+    height: auto; /* Maintain aspect ratio based on width in HTML */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem; /* Space between links */
+}
+
+
+.nav-links li {
+    margin: 0.25rem 0.25rem; /* Adjust spacing for wrapping */
+}
+
+.nav-links a {
+    color: var(--clean-white);
+    text-decoration: none;
+    /* Adjust padding slightly */
+    /* padding: 0.5rem 0.25rem; */
+    position: relative;
+    white-space: nowrap; /* Prevent link text breaking */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    color: var(--success-gold);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--success-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+
+/* --- Mobile Menu Toggle --- */
+.mobile-menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Ensure it's above the nav links when they are shown */
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--clean-white); /* White lines for visibility on hero */
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- Hero Section --- */
+#hero {
+    position: relative;
+    /* Use min-height, adjust value */
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--clean-white);
+    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+    /* Add padding for content */
+    padding: 40px 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 29, 27, 0.65); /* Slightly darker overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+#hero h1 {
+    color: var(--clean-white);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+#hero .subtitle {
+    font-size: 1.1rem; /* Adjusted size */
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.cta-button:hover {
+    color: var(--deep-charcoal);
+    background-color: var(--success-gold);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--muted-honey);
+    color: var(--text-dark);
+    padding: 14px 30px; /* Larger padding for touch */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Ensure no default border */
+    cursor: pointer; /* Indicate interactivity */
+    font-size: 1.3rem;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--muted-honey);
+    transform: translateY(-2px);
+}
+
+/* --- About Section --- */
+#about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+#about .about-text {
+    flex: 1;
+    min-width: 300px; /* Allow shrinking below 300 if needed */
+    flex-basis: 45%; /* Suggest initial basis */
+}
+#about .about-text h3 {
+    margin-top: 2rem;
+}
+#about .about-image {
+    flex: 1;
+    min-width: 300px;
+    flex-basis: 45%;
+}
+#about .about-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Why Choose Us Section --- */
+.reasons-grid {
+    display: grid;
+    /* Start with 1 column on small, move to more */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+.reason-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Portfolio Section --- */
+.portfolio-grid {
+    display: grid;
+    /* Start with 1 column */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    aspect-ratio: 4 / 3; /* Maintain aspect ratio */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%; /* Fill the container */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(29, 29, 27, 0.9), rgba(29, 29, 27, 0)); /* Gradient from Deep Charcoal */
+    color: var(--clean-white);
+    padding: 30px 15px 15px 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Added transform */
+    transform: translateY(20px); /* Start slightly lower */
+}
+
+.portfolio-item:hover img,
+.portfolio-item:focus-within img { /* Added focus-within for keyboard nav */
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover .portfolio-overlay,
+.portfolio-item:focus-within .portfolio-overlay {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+}
+/* Add focus state to the item itself for visual cue */
+.portfolio-item:focus-within {
+     outline: 3px solid var(--success-gold);
+     outline-offset: 3px;
+     box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Enhanced shadow on focus */
+}
+
+.portfolio-overlay h3 {
+    color: var(--clean-white);
+    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+}
+.portfolio-overlay p {
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    margin-bottom: 0;
+}
+
+
+/* --- Contact Section --- */
+.contact-content { /* New wrapper style */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem; /* Space between details and form */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.contact-details {
+    /* display: grid; */ /* Keep grid for internal layout */
+    /* grid-template-columns: 1fr; */ /* Already set for mobile first */
+    /* gap: 2rem; */ /* Already set */
+    /* text-align: center; */ /* Already set */
+    /* margin-bottom: 3rem; */ /* Remove bottom margin, handled by gap */
+    flex: 1; /* Allow details to take up space */
+    min-width: 280px; /* Minimum width before wrapping */
+}
+
+.contact-form { /* New form styles */
+    flex: 1.5; /* Allow form to take more space */
+    min-width: 300px; /* Minimum width */
+    background-color: var(--light-grey); /* Optional background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-form h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: left; /* Align form heading left */
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--success-gold);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3); /* Subtle focus ring */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+
+.contact-form .cta-button { /* Style submit button */
+    width: 100%;
+    padding: 15px; /* Slightly larger padding */
+    font-size: 1rem;
+}
+
+
+.contact-item .icon {
+     width: 36px;
+     height: 36px;
+     /* Stroke and fill are set in the global .icon style */
+     margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    margin-bottom: 0.5rem;
+}
+.contact-item p {
+    color: var(--mid-grey);
+    margin-bottom: 0;
+}
+.contact-item a {
+    /* color: var(--muted-honey); */
+    color: var(--text-dark);
+    /* Increase tap target slightly */
+    padding: 0.25rem 0;
+    display: inline-block; /* Needed for padding */
+}
+.contact-item a:hover,
+.contact-item a:focus {
+    color: var(--success-gold);
+}
+
+/* --- Footer --- */
+#footer {
+    background-color: var(--deep-charcoal);
+    color: var(--mid-grey);
+    text-align: center;
+    padding: 1.5rem 1rem; /* Added horizontal padding */
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+#footer .heart {
+    color: var(--success-gold);
+}
+
+
+/* --- Go to Top Button --- */
+#goToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--success-gold);
+    color: var(--dark-gray);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Make it circular */
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 50px;
+    height: 50px;
+}
+
+#goToTopBtn.show {
+    display: block;
+    opacity: 1;
+}
+
+#goToTopBtn:hover {
+    /* Darken on hover */
+    background-color: var(--text-dark);
+    color: var(--success-gold);
+}
+
+/* --- Responsive Design Adjustments --- */
+
+/* Small devices (landscape phones, ~576px and up) */
+@media (min-width: 576px) {
+    .container {
+        /* More padding on slightly larger screens */
+        padding: 0 20px;
+    }
+     h1 { font-size: 2.8rem; }
+     .section-intro { font-size: 1.1rem; }
+
+     /* Grid columns */
+    .portfolio-grid {
+        /* 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contact-details {
+        /* grid-template-columns: repeat(3, 1fr); */ /* Let flexbox handle layout now */
+        /* Keep grid for internal items if desired, or switch to flex */
+        display: flex; /* Example: switch details to flex column */
+        flex-direction: column;
+        gap: 1.5rem; /* Adjust gap if needed */
+        text-align: left; /* Align text left in flex */
+    }
+    .contact-item .icon {
+        margin: 0 0 0.5rem 0; /* Adjust icon margin for left align */
+    }
+}
+
+/* Styles for screens smaller than Medium (Mobile Menu Active) */
+@media (max-width: 767px) {
+    #header nav {
+        /* Allow items to wrap if needed, though toggle should prevent it */
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Show toggle on smaller screens */
+        order: 3; /* Place it after logo and links in source order */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(29, 29, 27, 0.95); /* Dark background */
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        /* Basic transition setup (JS needed to toggle 'active') */
+        /* opacity: 0; */
+        /* visibility: hidden; */
+        /* transform: translateY(-10px); */
+        /* transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; */
+    }
+
+    /* Style to show the menu (requires JS to add/remove 'nav-active' class to header or body) */
+    .nav-active .nav-links {
+        display: flex;
+        /* opacity: 1; */
+        /* visibility: visible; */
+        /* transform: translateY(0); */
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        color: var(--clean-white); /* Ensure links are visible */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        background-color: rgba(255, 193, 7, 0.1); /* Subtle hover */
+        color: var(--success-gold);
+    }
+    .nav-links a::after {
+        display: none; /* Hide underline effect on mobile */
+    }
+
+    /* Hamburger animation (when active - requires JS) */
+    .nav-active .mobile-menu-toggle span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-active .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-active .mobile-menu-toggle span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    #goToTopBtn {
+        bottom: 15px;
+        right: 15px;
+        /* Adjust size for mobile */
+        width: 40px;
+        height: 40px;
+        /* Remove padding override to keep arrow centered */
+        padding: 0;
+        font-size: 16px;
+        /* Ensure line-height helps center the arrow vertically */
+        line-height: 40px; /* Match height */
+        text-align: center; /* Center arrow horizontally */
+    }
+}
+
+/* Medium devices (tablets, ~768px and up) */
+@media (min-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    /* Restore original padding */
+    .section { padding: 60px 0; }
+    .nav-links {
+        display: flex; /* Ensure flex display is restored */
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        padding: 0;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+    }
+    .nav-links li {
+        margin: 0.25rem 0.25rem; /* Restore original margin */
+    }
+    .nav-links a {
+        color: var(--clean-white); /* Restore original color */
+        padding: 0.5rem 0.25rem; /* Restore padding */
+    }
+    .mobile-menu-toggle {
+        display: none; /* Hide toggle on larger screens */
+    }
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for reasons */
+    }
+     #hero { min-height: 80vh; } /* Restore height */
+     .contact-content {
+         flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+     }
+     /* .contact-details { */
+         /* Restore grid if preferred for 3 columns side-by-side */
+         /* display: grid; */
+         /* grid-template-columns: 1fr; */ /* Or repeat(3, 1fr) if you want 3 cols */
+         /* text-align: center; */ /* Restore center align if using grid */
+     /* } */
+}
+
+/* Large devices (desktops, ~992px and up) */
+@media (min-width: 992px) {
+     h1 { font-size: 3.2rem; } /* Further increase */
+     .reasons-grid {
+         grid-template-columns: repeat(4, 1fr); /* 4 columns for reasons */
+     }
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns portfolio */
+    }
+    .about-text { min-width: 400px; /* Ensure text block has space */ }
+    .about-image { min-width: 400px; }
+}
+
+/* Extra large devices (large desktops, ~1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px; /* Increase container max-width */
+    }
+     .portfolio-grid {
+         grid-template-columns: repeat(4, 1fr); /* 4 columns for portfolio on very wide */
+     }
+}

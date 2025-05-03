@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg viewBox="0 0 50 50" width="50" height="50">
+    <polygon points="25,1 45,12 45,38 25,49 5,38 5,12" fill="var(--success-gold)" stroke="var(--deep-charcoal)" stroke-width="1"/>
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="var(--deep-charcoal)" font-size="18" font-weight="bold">1</text>
+</svg>
