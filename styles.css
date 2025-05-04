@@ -212,7 +212,8 @@ section {
 
 /* About Section */
 .about {
-    background-color: var(--light-grey);
+    /* background-color: var(--light-grey); */
+    background-color: var(--clean-white);
 }
 
 .about-content {
@@ -248,7 +249,8 @@ section {
 
 /* Approach Section */
 .approach {
-    background-color: var(--beeswax-cream);
+    /* background-color: var(--beeswax-cream); */
+    background-color: var(--light-grey);
     text-align: center;
 }
 

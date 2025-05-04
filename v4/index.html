@@ -4,275 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEEDAYA - Blueprint of Success</title>
-    <meta name="description" content="BEEDAYA is your expert partner in architecture, civil engineering and real estate development. From design to delivery, we transform your aspirations into concrete, functional, and inspiring spaces.">
+    <meta name="description" content="BEEDAYA is your expert partner in architecture, civil engineering, and real estate development in Algeria. Consulting, Design, Management, Execution.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <!-- Consider adding Favicon links here -->
+    <!-- <link rel="icon" href="/favicon.ico" sizes="any"> -->
+    <!-- <link rel="icon" href="/icon.svg" type="image/svg+xml"> -->
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
 </head>
 <body>
+
     <!-- Header -->
     <header id="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-hexagon"></i>
-                <span>BEEDAYA</span>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">&#9776;</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#approach">Our Approach</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="container">
+            <a href="#hero" class="logo">
+                <img src="/images/icons/logo.svg" alt="Logo" loading="lazy" width="25">
+                BEEDAYA
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Language Dropdown -->
+                <li class="language-dropdown">
+                    <a href="#" class="language-trigger" aria-haspopup="true" aria-expanded="false">
+                        <img src="/images/icons/globe.svg" alt="Language" class="globe-icon" width="16" height="16"><span class="arrow-down">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-label="Select language">
+                        <li><a href="/"><img src="https://flagcdn.com/us.svg" alt="USA Flag" class="flag-icon"> English</a></li>
+                        <li><a href="/fr"><img src="https://flagcdn.com/fr.svg" alt="France Flag" class="flag-icon"> Français</a></li>
+                        <li><a href="/ar"><img src="https://flagcdn.com/dz.svg" alt="Algeria Flag" class="flag-icon"> العربية</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>The Art of Design, The Science of Building, The Rigor of Realization</h1>
-                <p>Transforming your aspirations into concrete, functional, and inspiring spaces</p>
-                <a href="#contact" class="btn">Start Your Project</a>
+    <section id="hero">
+        <div class="hero-content container">
+            <h1>Blueprint of Success</h1>
+            <!-- <h1>The Art of Designing,<br> The Science of Building,<br> The Rigor of Executing.</h1> -->
+            <!-- <p class="subtitle">Your vision, our expertise. The beginning of exceptional projects.</p> -->
+            <p class="subtitle">The <b>Art</b> of Designing, the <b>Science</b> of Building, and the <b>Rigor</b> of Executing.</p>
+            <a href="#contact" class="cta-button">Discuss your project</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="container section">
+        <h2>Who are we?</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>BEEDAYA</strong> is a passionate collective of architects, designers, and engineers, united by a common vision: transforming your aspirations into concrete, functional, and inspiring spaces. We are creators, technicians, and expert advisors, dedicated to excellence at every stage of your architecture, civil engineering, and real estate development projects.</p>
+                <h3>Our Approach: The Beginning of Your Vision.</h3>
+                <p>The name "BEEDAYA" (meaning "the beginning" or "the start") reflects our fundamental philosophy. Each project is a new beginning, a unique opportunity to create something exceptional. We believe in a collaborative approach where your vision is the starting point of our creative and technical process.</p>
+                 <p><em>We listen attentively, analyze rigorously, and propose tailored, innovative, and sustainable solutions.</em></p>
+             </div>
+            <div class="about-image">
+                <img src="/images/house-mock-up-top-blueprints-with-pen-notes-corrections.jpg" alt="House mock up top - blueprints with pen notes corrections" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+     <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section section-highlight">
         <div class="container">
-            <h2 class="section-title">Who Are We?</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>BEEDAYA is a passionate collective of architects, designers, and engineers, united by a common vision: to transform your aspirations into concrete, functional, and inspiring spaces. We are creators, technicians, and expert consultants, dedicated to excellence at every stage of your architectural, civil engineering, and real estate development projects.</p>
-                    <p>Our integrated expertise in architecture, design, and civil engineering allows us to offer a holistic vision and management of your projects. From initial advice to final construction supervision, we are your single, dedicated point of contact.</p>
+             <h2>Why choose BEEDAYA?</h2>
+             <div class="reasons-grid">
+                 <div class="reason-item">
+                    <img src="/images/icons/expert.svg" alt="Integrated Expertise" class="icon">
+                    <h3>Integrated Expertise</h3>
+                    <p>Synergy between architecture, design, and civil engineering for a holistic vision.</p>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BEEDAYA Team">
+                <div class="reason-item">
+                    <img src="/images/icons/support.svg" alt="Complete Support" class="icon">
+                     <h3>Complete Support</h3>
+                    <p>Your single point of contact, from initial advice to final supervision.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Approach Section -->
-    <section class="approach" id="approach">
-        <div class="container">
-            <h2 class="section-title">Our Approach: The Beginning of Your Vision</h2>
-            <p>The name "BEEDAYA" (meaning "the beginning" or "the start") reflects our fundamental philosophy. Each project is a new beginning, a unique opportunity to create something exceptional.</p>
-            <div class="approach-cards">
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Listen</h3>
-                    <p>We listen carefully to your needs, dreams, and constraints to fully understand your vision.</p>
+                 <div class="reason-item">
+                    <img src="/images/icons/innovation.svg" alt="Innovation & Sustainability" class="icon">
+                     <h3>Innovation & Sustainability</h3>
+                    <p>Integration of best practices and technologies for durable structures.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Analyze</h3>
-                    <p>We analyze constraints and potential to identify the best possible solutions for your project.</p>
+                 <div class="reason-item">
+                    <img src="/images/icons/commitment.svg" alt="Rigor & Creativity" class="icon">
+                     <h3>Rigor & Creativity</h3>
+                    <p>Combining technical precision and imagination for unique and controlled projects.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Create</h3>
-                    <p>We propose tailor-made, innovative, and sustainable solutions that bring your vision to life.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services: Complete Expertise</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1331&q=80" alt="Strategic Consulting">
-                    </div>
-                    <div class="service-content">
-                        <h3>Strategic Consulting & Preliminary Studies</h3>
-                        <p>Feasibility studies, potential analysis, conceptual sketches, market analysis, and initial diagnostics to set your project on the right path.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1626885930974-4b69aa21bbf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Design and Engineering">
-                    </div>
-                    <div class="service-content">
-                        <h3>Design and Engineering</h3>
-                        <p>Detailed architectural design, technical studies, structural design, calculations, and selection of sustainable construction materials and techniques.</p>
-                    </div>
-                </div>
-                <!-- <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1581922814484-0b48460b7010?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project Management">
-                    </div>
-                    <div class="service-content">
-                        <h3>Project Management and Monitoring</h3>
-                        <p>Support with administrative procedures, overall coordination, schedule and budget management, and interface between various stakeholders.</p>
-                    </div>
-                </div> -->
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Construction Supervision">
-                    </div>
-                    <div class="service-content">
-                        <h3>Construction Supervision</h3>
-                        <p>Ensuring compliance with plans and standards, site supervision, and quality and safety management throughout the construction process.</p>
-                    </div>
-                </div>
-            </div>
+             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">Our Portfolio</h2>
-            <div class="portfolio-filter">
-                <button class="active" data-filter="all">All</button>
-                <button data-filter="architecture">Architecture</button>
-                <button data-filter="interior">Interior Design</button>
-                <button data-filter="civil">Civil Engineering</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="architecture">
-                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Modern Residence">
-                    <div class="portfolio-overlay">
-                        <h3>Modern Residence</h3>
-                        <p>Architecture</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="interior">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80" alt="Luxury Interior">
-                    <div class="portfolio-overlay">
-                        <h3>Luxury Interior</h3>
-                        <p>Interior Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="civil">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Bridge Construction">
-                    <div class="portfolio-overlay">
-                        <h3>Bridge Construction</h3>
-                        <p>Civil Engineering</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="architecture">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80" alt="Commercial Building">
-                    <div class="portfolio-overlay">
-                        <h3>Commercial Building</h3>
-                        <p>Architecture</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="interior">
-                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80" alt="Office Space">
-                    <div class="portfolio-overlay">
-                        <h3>Office Space</h3>
-                        <p>Interior Design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="civil">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Infrastructure Project">
-                    <div class="portfolio-overlay">
-                        <h3>Infrastructure Project</h3>
-                        <p>Civil Engineering</p>
-                    </div>
+    <section id="portfolio" class="container section">
+        <h2>Our Portfolio</h2>
+        <p class="section-intro">Discover some of our completed and ongoing projects.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="/images/portfolio/477b08194469269.65fc56ced024c.jpg" alt="Modern Residential Project" loading="lazy">
+                <div class="portfolio-overlay">
+                    <h3>Residential Project (Oran)</h3>
+                    <p>3D Architectural Design</p>
                 </div>
             </div>
+            <div class="portfolio-item">
+                 <img src="/images/portfolio/5cf8be194608839.65fedceeb0dee.jpg" alt="Commercial Interior Design" loading="lazy">
+                 <div class="portfolio-overlay">
+                    <h3>Commercial Space</h3>
+                    <p>Interior Design</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                 <img src="/images/portfolio/84feb2216584269.67825d3a6c519.png" alt="Structural Engineering" loading="lazy">
+                 <div class="portfolio-overlay">
+                    <h3>Structural Engineering</h3>
+                    <p>Civil Engineering</p>
+                </div>
+            </div>
+             <div class="portfolio-item">
+                 <img src="/images/portfolio/93b9ed215525469.676dad15ed543.png" alt="Architectural Plan" loading="lazy">
+                 <div class="portfolio-overlay">
+                    <h3>3D Rendering</h3>
+                    <p>Consulting & Feasibility</p>
+                </div>
+            </div>
+             <!-- Add more portfolio items as needed -->
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+     <!-- Call to Action Section -->
+    <section id="cta" class="section section-dark">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt contact-icon"></i> 08 Rue Hallouane Tahar, Ain Benian, Algiers</p>
-                        <p><i class="fas fa-envelope contact-icon"></i> contact@beedaya.com</p>
-                        <p><i class="fas fa-phone contact-icon"></i> +213 554 658 989</p>
-                        <p><i class="fas fa-globe contact-icon"></i> www.beedaya.com</p>
-                    </div>
-                    <h3>Let's Bring Your Projects to Life, from A to Z</h3>
-                    <p>Whether you are an individual, a developer, an investor, or an institution, BEEDAYA is your trusted partner to initiate, design, manage, and realize your real estate and architectural ambitions.</p>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+            <h2>Let's bring your projects to life, with A to Z monitoring.</h2>
+             <p>Individual, developer, investor, or institution, BEEDAYA is your trusted partner.</p>
+             <a href="#contact" class="cta-button cta-button-light">Contact Us</a>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container section">
+        <h2>Contact BEEDAYA</h2>
+        <p class="section-intro">Ready to start? Let's discuss your next project.</p>
+        <div class="contact-content"> <!-- New wrapper -->
+            <div class="contact-details">
+                <div class="contact-item">
+                     <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg> -->
+                     <img src="/images/icons/location.svg" alt="Address" width="36">
+                     <h3>Address</h3>
+                     <p>08 Rue Hallouane Tahar, Ain Benian, Algiers, Algeria</p>
+                 </div>
+                <div class="contact-item">
+                     <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg> -->
+                     <img src="/images/icons/email.svg" alt="Email" width="36">
+                     <h3>Email</h3>
+                     <p><a href="mailto:contact@beedaya.com">contact@beedaya.com</a></p>
+                 </div>
+                 <div class="contact-item">
+                     <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" /></svg> -->
+                     <img src="/images/icons/phone.svg" alt="Phone" width="36">
+                     <h3>Phone</h3>
+                     <p><a href="tel:+213554658989">+213 554 658 989</a></p>
                 </div>
             </div>
+
+            <form id="contact-form" class="contact-form">
+                <h3>Leave us a message</h3>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>BEEDAYA</h2>
-                    <p>The Art of Design, The Science of Building, The Rigor of Realization.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Architectural Design</a></li>
-                        <li><a href="#">Interior Design</a></li>
-                        <li><a href="#">Civil Engineering</a></li>
-                        <li><a href="#">Project Management</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 BEEDAYA. All Rights Reserved. | Blueprint of Success</p>
-            </div>
+            <p>© <span id="current-year"></span> BEEDAYA. All rights reserved.</p>
+            <!-- Optional: Add social media links here -->
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- Go to Top Button -->
+    <button id="goToTopBtn" title="Go to top">↑</button>
+
+<script>
+    // Simple script to update year automatically
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle Functionality
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.getElementById('header'); // Target the header for the class toggle
+
+    if (menuToggle && navLinks && header) {
+        menuToggle.addEventListener('click', () => {
+            // Toggle the .nav-active class on the header
+            header.classList.toggle('nav-active');
+
+            // Toggle aria-expanded attribute for accessibility
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+
+            // Toggle display style for nav-links (alternative to class-based toggle if needed, but class is preferred)
+            // if (navLinks.style.display === 'flex') {
+            //     navLinks.style.display = 'none';
+            // } else {
+            //     navLinks.style.display = 'flex';
+            // }
+        });
+
+        // Optional: Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (header.classList.contains('nav-active')) {
+                    header.classList.remove('nav-active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
+
+        // Go to Top Button Functionality
+        const goToTopBtn = document.getElementById('goToTopBtn');
+
+        if (goToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { // Show button after scrolling 300px
+                    goToTopBtn.classList.add('show');
+                } else {
+                    goToTopBtn.classList.remove('show');
+                }
+            });
+
+            goToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+</script>
 </body>
 </html>

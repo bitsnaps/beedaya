@@ -213,6 +213,97 @@ img {
     width: 100%;
 }
 
+.nav-links a:focus::after {
+    width: 100%;
+}
+
+/* --- Language Dropdown --- */
+.language-dropdown {
+    position: relative; /* Needed for absolute positioning of the dropdown */
+}
+
+.language-trigger {
+    display: flex; /* Align icon and text */
+    align-items: center;
+    gap: 0.4rem; /* Space between icon/text/arrow */
+}
+.language-trigger .globe-icon {
+    /* Adjust icon styling if needed */
+    display: inline-block;
+    vertical-align: middle; /* Align icon nicely with text */
+    /* filter: invert(1); /* Make it white if it's black */
+}
+.language-trigger .arrow-down {
+    font-size: 0.7em; /* Smaller arrow */
+    display: inline-block;
+    margin-left: 0.2rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position below the trigger */
+    left: 0;
+    background-color: var(--deep-charcoal); /* Match mobile menu background */
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 5px 0 0 0; /* Small gap from trigger */
+    min-width: 150px; /* Minimum width */
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1002; /* Above other nav items */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.language-dropdown:hover .dropdown-menu,
+.language-dropdown:focus-within .dropdown-menu { /* Show on hover/focus */
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+/* Rotate arrow when dropdown is open (optional) */
+.language-dropdown:hover .arrow-down,
+.language-dropdown:focus-within .arrow-down {
+    transform: rotate(180deg);
+}
+
+
+.dropdown-menu li {
+    margin: 0; /* Reset margin */
+}
+
+.dropdown-menu a {
+    display: flex; /* Use flex for flag and text alignment */
+    align-items: center;
+    gap: 0.6rem; /* Space between flag and text */
+    padding: 0.6rem 1rem;
+    color: var(--clean-white);
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: rgba(255, 193, 7, 0.1); /* Subtle gold hover */
+    color: var(--success-gold); /* Match other hover states */
+}
+/* Remove underline effect from main nav */
+.dropdown-menu a::after {
+    display: none;
+}
+
+.flag-icon {
+    width: 20px; /* Adjust flag size */
+    height: auto;
+    vertical-align: middle;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
 
 /* --- Mobile Menu Toggle --- */
 .mobile-menu-toggle {
@@ -629,10 +720,73 @@ img {
     }
 
     .nav-links a {
-        display: block;
-        padding: 1rem;
-        color: var(--clean-white); /* Ensure links are visible */
+        /* ... existing code ... */
+        /* Ensure dropdown trigger aligns like other links */
+        display: flex; /* Use flex for trigger too */
+        justify-content: center; /* Center content */
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    /* Adjust dropdown for mobile */
+    .language-dropdown {
+        position: static; /* Remove absolute positioning context */
+    }
+    .dropdown-menu {
+        position: static; /* Become part of the flow */
+        display: block; /* Always visible when parent is */
+        background-color: transparent; /* Inherit background */
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        min-width: auto;
+        border-radius: 0;
+        opacity: 1; /* Reset transitions */
+        visibility: visible;
+        transform: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator */
+    }
+    .language-dropdown .language-trigger {
+        /* Hide the main trigger link visually, but keep for structure/semantics if needed */
+        /* display: none; */
+        /* Or style it like a header */
+        padding: 0.5rem 1rem;
+        font-weight: bold;
+        color: var(--mid-grey);
+        pointer-events: none; /* Don't make it clickable */
+        justify-content: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+     .language-dropdown .language-trigger .arrow-down {
+         display: none; /* Hide arrow on mobile trigger */
+     }
+
+    .dropdown-menu li a {
+        justify-content: center; /* Center flag and text */
+        padding: 0.8rem 1rem; /* Adjust padding */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add separators */
+    }
+     .dropdown-menu li:last-child a {
+         border-bottom: none; /* Remove last border */
+     }
+
+    /* Hide the main language dropdown list item when mobile menu is closed */
+    .nav-links .language-dropdown {
+        /* This might hide it entirely, adjust based on .nav-active toggle */
+         /* display: none; */ /* Revisit this if needed */
+    }
+    /* Ensure it shows when menu is active */
+     .nav-active .nav-links .language-dropdown {
+         display: block; /* Or list-item */
+     }
+
+    /* Hide the nested dropdown menu initially */
+    .nav-links .dropdown-menu {
+        display: none;
+    }
+    /* Show nested dropdown menu when mobile menu is active */
+    .nav-active .nav-links .dropdown-menu {
+        display: block;
     }
     .nav-links li:last-child a {
         border-bottom: none;
@@ -701,6 +855,44 @@ img {
     .mobile-menu-toggle {
         display: none; /* Hide toggle on larger screens */
     }
+    /* Restore dropdown styles for desktop */
+    .language-dropdown {
+        position: relative;
+    }
+    .dropdown-menu {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--deep-charcoal);
+        list-style: none;
+        padding: 0.5rem 0;
+        margin: 5px 0 0 0;
+        min-width: 150px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1002;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+     .language-dropdown .language-trigger {
+         /* Restore desktop trigger style */
+         pointer-events: auto;
+         padding: 0.5rem 0.25rem; /* Match other nav links */
+         font-weight: normal; /* Match other nav links */
+         color: var(--clean-white); /* Match other nav links */
+         border-bottom: none;
+     }
+     .language-dropdown .language-trigger .arrow-down {
+         display: inline-block; /* Show arrow */
+     }
+     .dropdown-menu li a {
+         justify-content: flex-start; /* Align left */
+         padding: 0.6rem 1rem; /* Restore padding */
+         border-bottom: none; /* Remove borders */
+     }
     .reasons-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for reasons */
     }
