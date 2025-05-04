@@ -2,7 +2,8 @@
 
 :root {
     /* Main Colors */
-    --deep-charcoal: #1D1D1B;
+    /* --deep-charcoal: #1D1D1B; */
+    --deep-charcoal: #0b203c;
     --success-gold: #FFC107;
     
     /* Accent & Secondary Colors */
@@ -14,6 +15,9 @@
     --clean-white: #FFFFFF;
     --mid-grey: #888888;
     --light-grey: #F0F0F0;
+
+    /* Navy Bleu */
+    --navy-blue: #1B365D;
 }
 
 * {
@@ -147,6 +151,25 @@ header .container {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+    display: flex;
+    align-items: center; /* Vertically center flags if needed */
+}
+
+.flag-icon {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the flag covers the circle */
+    margin-left: 8px; /* Space between flags */
+    vertical-align: middle; /* Align with text if needed */
+}
+
+.nav-links li:last-child a:first-child .flag-icon {
+    margin-left: 0; /* Remove margin from the first flag */
 }
 
 /* Hero Section */
