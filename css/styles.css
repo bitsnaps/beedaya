@@ -111,7 +111,7 @@ header .container {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     font-weight: 700;
     color: var(--success-gold);
     /* color: var(--deep-charcoal); */
@@ -155,7 +155,7 @@ header .container {
 
 /* Language Switcher Styles */
 .language-switcher {
-    display: flex;
+    /* display: flex; */
     align-items: center; /* Vertically center flags if needed */
 }
 
@@ -316,7 +316,7 @@ section {
 /* Services Section */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
