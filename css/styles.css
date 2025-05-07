@@ -117,9 +117,9 @@ header .container {
     /* color: var(--deep-charcoal); */
 }
 
-.logo span {
+/* .logo span {
     margin-left: 10px;
-}
+} */
 
 .nav-links {
     display: flex;
@@ -470,7 +470,7 @@ section {
 }
 
 .contact-icon {
-    margin-right: 10px;
+    margin: 0 10px 0 10px;
     color: var(--success-gold);
     /* color: var(--pollen-yellow); */
 }
