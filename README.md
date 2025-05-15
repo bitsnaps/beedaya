@@ -15,3 +15,6 @@ This project is built with moderne UX/UI style and follows best practices in web
 ## About this repo
 
 This repo contains a different templates for the same project.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
